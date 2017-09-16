@@ -8,3 +8,6 @@
 out
 gen
 /myvenv
+/__init__.pyc
+/settings.pyc
+/wsgi.pyc
