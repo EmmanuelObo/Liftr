@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'liftr.apps.LiftrConfig',
+    'person.apps.PersonConfig',
+    'message.apps.MessageConfig',
+    'preference.apps.PreferenceConfig'
 ]
 
 MIDDLEWARE = [

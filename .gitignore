@@ -11,3 +11,4 @@ gen
 /__init__.pyc
 /settings.pyc
 /wsgi.pyc
+*.pyc
