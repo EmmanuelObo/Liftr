@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'liftr.apps.LiftrConfig',
     'person.apps.PersonConfig',
     'message.apps.MessageConfig',
-    'preference.apps.PreferenceConfig'
+    'preference.apps.PreferenceConfig',
+    'friendship'
 ]
 
 MIDDLEWARE = [
