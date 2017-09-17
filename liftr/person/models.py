@@ -23,7 +23,7 @@ class Person(models.Model):
     gender = models.CharField(choices=gender, max_length=10, null=True)
     age = models.IntegerField(null=True)
     focus = models.CharField(choices=focus, max_length=15, null=True)
-    location = models.CharField(max_length=30, null=True)
+    location = models.CharField(max_length=150, null=True)
     bio = models.TextField(null=True)
     longitude = models.DecimalField(max_digits=100, decimal_places=100, null=True)
     latitude = models.DecimalField(max_digits=100, decimal_places=100, null=True)
@@ -69,3 +69,8 @@ class Person(models.Model):
 
     def __str__(self):
         return self.user.username
+
+    def dict(self):
+        return {'user': self.user.username, 'gender': self.user.person.gender, 'age': self.user.person.age,
+                'focus': self.user.person.focus, 'location': self.user.person.location, 'latitude' : self.user.person.latitude,
+                'longitude': self.user.person.longitude}

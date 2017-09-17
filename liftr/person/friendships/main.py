@@ -9,5 +9,3 @@ def accept_request(curr_user):
 
 def reject_request(curr_user):
      FriendshipRequest.objects.get(to_user=curr_user).reject()
-
-
