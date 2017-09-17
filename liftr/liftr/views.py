@@ -7,9 +7,12 @@ def home(request):
 
 def coordinates(request):
     if request.method == 'POST':
+        print("hello")
         latitude = request.POST.get('latitude')
         longitude = request.POST.get('longitude')
+        print("latitude{} longitude{}".format(latitude,longitude))
         geolocator = Nominatim()
-        
-        print(latitude, longitude)
+
+        location = geolocator.reverse("{}, {}".format(latitude,longitude))
+        print(location.address)
         return render(request, "base.html", {})

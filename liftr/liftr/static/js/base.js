@@ -11,6 +11,7 @@ function getLocation() {
 function storePosition(position) {
     lat = position.coords.latitude;
     long = position.coords.longitude;
+    console.log(lat,long);
     send_ajax(lat,long);
 }
 
