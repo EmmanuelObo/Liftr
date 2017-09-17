@@ -10,7 +10,7 @@ function send_login() {
             success: function() {
               console.log("Succes");
             },
-            error: function(err) {
-              console.log(err);
+            error: function(error) {
+              console.log(error);
             }});
 }

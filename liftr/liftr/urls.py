@@ -20,8 +20,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^home/', views.home, name='home'),
     url(r'^coordinates/', views.coordinates, name='coordinates'),
-    url(r'^login/', views.login_screen, name='login'),
-    url(r'^user_login/', views.user_login, name='user_login'),
+    url(r'^login/', views.user_login, name='login'),
+    # url(r'^user_login/', views.user_login, name='user_login'),
     url(r'^user_logout/', views.user_logout, name='user_logout'),
     url(r'^workout/', views.workout, name='workout'),
 ]
