@@ -29,15 +29,15 @@
           <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-apple"></span>Liftr</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="{% url 'home'  %}">Home</a></li>
-          <li><a href="{% url 'workout' %}">Workout buddies</a>
+          <li class="active"><a href="{% url 'liftr.views.home'  %}">Home</a></li>
+          <li><a href="{% url 'liftr.views.workout' %}">Workout buddies</a>
           <li><a href="#">Edit Profile</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           {% if user.is_authenticated %}
 
-          <li><a href="{% url 'user_logout'  %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li><a href="{% url 'liftr.views.user_logout'  %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
           {% else %}
-          <li><a href="{% url 'login'  %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="{% url 'liftr.views.user_login'  %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           {% endif %}
         </ul>
       </div>

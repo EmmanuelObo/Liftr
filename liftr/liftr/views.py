@@ -10,30 +10,25 @@ def home(request):
         return HttpResponseRedirect('/workout')
     return render(request, "sub_templates/home.html", {})
 
-def login_screen(request):
-    if request.user.is_authenticated():
-        return HttpResponseRedirect('/workout')
-    return render(request, "sub_templates/login.html", {})
-
-
 def workout(request):
     return render(request, "sub_templates/workout_buddy.html", {})
 
 def user_login(request):
-    username = request.POST.get('username')
-    password = request.POST.get('password')
-    user = authenticate(request, username=username, password=password)
-    print(user)
-    if user is not None:
-        print("user is not none")
-        login(request, user)
-        return HttpResponseRedirect('/workout')
-    else:
-        response = 'Login Unsuccessful'
-        print(response)
-        return render(request, 'login.html', {'response': response})
+    if request.method == 'POST':
 
-    return render(request, 'login.html', {'form': form, 'response': response})
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        print(user)
+        if user is not None:
+            x = login(request, user)
+            print(x)
+            return HttpResponseRedirect('/workout')
+        else:
+            response = 'Login Unsuccessful'
+            return render(request, 'sub_templates/login.html', {'response': response})
+    else:
+        return render(request, 'sub_templates/login.html')
 
 def user_logout(request):
     if request.user.is_authenticated():
