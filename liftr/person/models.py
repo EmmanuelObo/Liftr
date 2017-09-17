@@ -25,7 +25,7 @@ class Person(models.Model):
     focus = models.CharField(choices=focus, max_length=15, null=True)
     location = models.CharField(max_length=30, null=True)
     bio = models.TextField(null=True)
-    profile_pic = models.ImageField()
+    profile_pic = models.ImageField(null=True)
 
     @receiver(post_save, sender=User)
     def register(sender, instance, created, **kwargs):
