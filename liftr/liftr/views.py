@@ -1,11 +1,7 @@
 from django.shortcuts import render
 from geopy.geocoders import Nominatim
 from geopy.distance import vincenty
-<<<<<<< HEAD
 from django.http import HttpResponseRedirect
-=======
-
->>>>>>> a5d108292a08c7db3ce8d5d3f09acf46b4a8d395
 from django.contrib.auth.models import User
 
 def home(request):
@@ -15,7 +11,7 @@ def login_screen(request):
     return render(request, "sub_templates/login.html", {})
 
 
-def workout_buddy(request):
+def workout(request):
     return render(request, "sub_templates/workout_buddy.html", {})
 
 def user_login(request):
@@ -24,7 +20,7 @@ def user_login(request):
     print("username {} password {}".format(username,password))
     if request.user.is_authenticated():
         print(request.user)
-        return HttpResponseRedirect('/home')
+        return HttpResponseRedirect('/workout')
     user = authenticate(username=username, password=password)
 
     if user is not None:
