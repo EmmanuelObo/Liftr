@@ -3,11 +3,16 @@ from geopy.geocoders import Nominatim
 from geopy.distance import vincenty
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
 
 def home(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/workout')
     return render(request, "sub_templates/home.html", {})
 
 def login_screen(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/workout')
     return render(request, "sub_templates/login.html", {})
 
 
@@ -17,22 +22,23 @@ def workout(request):
 def user_login(request):
     username = request.POST.get('username')
     password = request.POST.get('password')
-    print("username {} password {}".format(username,password))
-    if request.user.is_authenticated():
-        print(request.user)
-        return HttpResponseRedirect('/workout')
-    user = authenticate(username=username, password=password)
-
+    user = authenticate(request, username=username, password=password)
+    print(user)
     if user is not None:
+        print("user is not none")
         login(request, user)
-        return HttpResponseRedirect('/home')
-
+        return HttpResponseRedirect('/workout')
     else:
         response = 'Login Unsuccessful'
+        print(response)
         return render(request, 'login.html', {'response': response})
 
     return render(request, 'login.html', {'form': form, 'response': response})
 
+def user_logout(request):
+    if request.user.is_authenticated():
+        logout(request)
+        return HttpResponseRedirect('/home')
 
 def coordinates(request):
     if request.method == 'POST':

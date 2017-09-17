@@ -33,7 +33,12 @@
           <li><a href="{% url 'liftr.views.workout' %}">Workout buddies</a>
           <li><a href="#">Edit Profile</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          {% if user.is_authenticated %}
+
+          <li><a href="{% url 'liftr.views.user_logout'  %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          {% else %}
           <li><a href="{% url 'liftr.views.login_screen'  %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
