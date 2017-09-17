@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from geopy.geocoders import Nominatim
 from geopy.distance import vincenty
+<<<<<<< HEAD
 from django.http import HttpResponseRedirect
+=======
+
+>>>>>>> a5d108292a08c7db3ce8d5d3f09acf46b4a8d395
 from django.contrib.auth.models import User
 
 def home(request):
