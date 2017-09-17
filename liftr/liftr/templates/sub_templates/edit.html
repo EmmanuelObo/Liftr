@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+  <div class="container">
+    <div class="customContainer">
+      <form class="" action="{% url 'liftr.views.coordinates' %}" method="GET">
+        <input type="submit" name="make_coordinates" value="Get Coordinates">
+      </form>
+      {% if  data %}
+      <p id="results">{{ data }}</p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

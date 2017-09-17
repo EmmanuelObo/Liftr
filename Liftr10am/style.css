@@ -1,0 +1,186 @@
+
+.navbar {
+    position: fixed;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+    width: 100%;
+    z-index: 1;
+}
+
+
+
+.nav li {
+  display: inline;
+}
+
+.jumbotron {
+  background-image:url('http://www.gainsthetics.com/wp-content/uploads/2016/07/gym.jpg');
+  height: 670px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron h1 {
+  color: white;
+  font-size: 108px;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+.jumbotron p {
+  padding-left:40px;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+
+.col-md-4 li {
+  font-size: 22px;
+}
+
+.col-md-4 p {
+  font-size: 18px;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.customContainer {
+  margin-top: 100px;
+}
+
+.container p{
+  color: orange;
+}
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.jumbotron {
+  background-image:url('http://www.gainsthetics.com/wp-content/uploads/2016/07/gym.jpg');
+  height: 670px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron h1 {
+  color: white;
+  font-size: 108px;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+.jumbotron p {
+  padding-left:60px;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+.col-md-4 li {
+  font-size: 22px;
+}
+
+.col-md-4 p {
+  margin-left: 18px;
+  font-size: 18px;
+}
+
+.col-md-4 h3 {
+  margin-left: 18px;
+}
