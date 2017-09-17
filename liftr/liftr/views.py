@@ -25,7 +25,7 @@ def workout(request):
         preference = Preference.objects.get(user=request.user.person)
         users = User.objects.all()
         user_pool = main.filter(request.user.person, preference, users)
-        return render(request, "sub_templates/workout_buddy.html", {"first_user": user_pool[1]})
+        return render(request, "sub_templates/workout_buddy.html", {"first_user": user_pool[0]})
 
     else:
         preference = Preference.objects.get(user=request.user.person)
