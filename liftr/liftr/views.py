@@ -4,6 +4,9 @@ from geopy.distance import vincenty
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from preference.models import Preference
+from person.pool import main
+from person.friendships import main as friends
 
 def home(request):
     if request.user.is_authenticated():
@@ -11,7 +14,23 @@ def home(request):
     return render(request, "sub_templates/home.html", {})
 
 def workout(request):
-    return render(request, "sub_templates/workout_buddy.html", {})
+    if request.method == 'POST':
+        pk = request.POST.get('send_request').replace("/","")
+        print("Value of pk: {} ".format(pk.replace("/","")))
+        recipient = User.objects.get(username=str(pk))
+        friends.send_request(request.user,recipient)
+        request.user.save()
+        preference = Preference.objects.get(user=request.user.person)
+        users = User.objects.all()
+        user_pool = main.filter(request.user.person, preference, users)
+        return render(request, "sub_templates/workout_buddy.html", {"first_user": user_pool[1]})
+
+    else:
+        preference = Preference.objects.get(user=request.user.person)
+        users = User.objects.all()
+        user_pool = main.filter(request.user.person,preference, users)
+        print(user_pool)
+        return render(request, "sub_templates/workout_buddy.html", {"first_user": user_pool[0]})
 
 def user_login(request):
     if request.method == 'POST':

@@ -25,8 +25,8 @@ class Person(models.Model):
     focus = models.CharField(choices=focus, max_length=15, null=True)
     location = models.CharField(max_length=150, null=True)
     bio = models.TextField(null=True)
-    longitude = models.DecimalField(max_digits=100, decimal_places=100, null=True)
-    latitude = models.DecimalField(max_digits=100, decimal_places=100, null=True)
+    longitude = models.DecimalField(default= 50, max_digits=100, decimal_places=100, null=True)
+    latitude = models.DecimalField(default=50, max_digits=100, decimal_places=100, null=True)
     profile_pic = models.ImageField(null=True)
 
     @receiver(post_save, sender=User)
@@ -65,7 +65,7 @@ class Person(models.Model):
         '''
         List of friend requests awaiting a response
         '''
-        return Friend.objects.unread_request_count(user=self.user)
+        return Friend.objects.unread_requests(user=self.user)
 
     def __str__(self):
         return self.user.username
