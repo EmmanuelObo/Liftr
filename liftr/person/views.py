@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from .pool import main
 
-# Create your views here.
+def load_user_pool(request):
+    preference = Preference.objects.get()
+    main.filter(request.user,)
+    return render(request,"workout_buddy.html",{})
