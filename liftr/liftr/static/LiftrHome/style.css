@@ -1,0 +1,57 @@
+/* Styles go here */
+.nav a {
+  font-size: 11px;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+  float: left;
+}
+
+.nav li {
+  display: inline;
+}
+
+.jumbotron {
+  background-image:url('http://www.gainsthetics.com/wp-content/uploads/2016/07/gym.jpg');
+  height: 670px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron h1 {
+  color: white;
+  font-size: 108px;
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+.jumbotron p {
+  padding-left:60px;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+.col-md-4 li {
+  font-size: 22px;
+}
+
+.col-md-4 p {
+  font-size: 18px;
+}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1><span class="glyphicon glyphicon-apple"></span>Liftr</h1>
+        <p>Find a workout buddy near you.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Why use Liftr?</h3>
+        <p>The hardest part about working out is finding the motivation to keep going. Having a friend to encourage you can turn out to be a huge deciding factor. Welcome to Liftr, a website designed to hellp you find a workout buddy. We will match you with
+          people who have similar goals, interests, and levels of experience. Whether you have a tight schedule or high standards, Liftr will find the perfect partner for you.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img src="https://www.runnersworld.com/sites/runnersworld.com/files/run-walk-treadmill.jpg">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3>Find a friend to workout with according to: </h3>
+        <ul>
+          <li>Location</li>
+        </ul>
+        <ul>
+          <li>Gym membership</li>
+        </ul>
+        <ul>
+          <li>Workout type</li>
+        </ul>
+        <ul>
+          <li>Gender</li>
+        </ul>
+        <ul>
+          <li>Schedule</li>
+        </ul>
+      </div>
+    </div>
+    <form class="test" action="index.html" method="post">
+       {% csrf_token %}
+    </form>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      window.onload = getLocation();
+    </script>
+  </body>
+{% endblock %}
