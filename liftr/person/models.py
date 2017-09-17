@@ -40,18 +40,31 @@ class Person(models.Model):
 
     @property
     def friends(self):
+        '''
+        List of User's friends
+        :return:
+        '''
         return Friend.objects.friends(self.user)
 
     @property
     def reject_list(self):
+        '''
+        List of rejected friend requests
+        '''
         return Friend.objects.rejected_requests(user=self.user)
 
     @property
     def pending_list(self):
+        '''
+        List of sent friend requests
+        '''
         return Friend.objects.sent_requests(user=self.user)
 
     @property
     def awaiting_list(self):
+        '''
+        List of friend requests awaiting a response
+        '''
         return Friend.objects.unread_request_count(user=self.user)
 
     def __str__(self):
